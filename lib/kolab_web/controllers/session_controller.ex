@@ -13,7 +13,7 @@ defmodule KolabWeb.SessionController do
 
   def create(conn, %{"session" => auth_params}) do
     user = Accounts.get_by_email_or_username(auth_params["login"])
-
+# require IEx; IEx.pry
     case Bcrypt.check_pass(user, auth_params["password"]) do
       {:ok, user} ->
         conn

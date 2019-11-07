@@ -46,6 +46,7 @@ defmodule Kolab.MixProject do
       {:ecto_enum, "~> 1.4"},
       {:comeonin, "~> 5.1"},
       {:bcrypt_elixir, "~> 2.0"},
+      {:httpoison, "~> 1.5"},
       {:dialyxir, "~> 1.0.0-rc.7", only: [:dev], runtime: false}
     ]
   end

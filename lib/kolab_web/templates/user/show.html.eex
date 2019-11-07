@@ -1,48 +1,29 @@
-<h1>Show User</h1>
+<div class="main-container">
+  <section>
+    <h1><%=  @user.full_name %></h2>
+    <h2><%= @user.tagline %></h4>
+    <div class="card">
+      <ul>
+        <li>
+          <strong>Email:</strong>
+          <%= @user.email %>
+        </li>
+        <li>
+          <strong>Twitter:</strong>
+          <%= @user.twitter %>
+        </li>
 
-<ul>
+        <li>
+          <strong>Github:</strong>
+          <%= @user.github %>
+        </li>
 
-  <li>
-    <strong>Username:</strong>
-    <%= @user.username %>
-  </li>
-
-  <li>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </li>
-
-  <li>
-    <strong>Encrypted password:</strong>
-    <%= @user.encrypted_password %>
-  </li>
-
-  <li>
-    <strong>Full name:</strong>
-    <%= @user.full_name %>
-  </li>
-
-  <li>
-    <strong>Tagline:</strong>
-    <%= @user.tagline %>
-  </li>
-
-  <li>
-    <strong>Twitter:</strong>
-    <%= @user.twitter %>
-  </li>
-
-  <li>
-    <strong>Github:</strong>
-    <%= @user.github %>
-  </li>
-
-  <li>
-    <strong>Website:</strong>
-    <%= @user.website %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: Routes.user_path(@conn, :edit, @user) %></span>
-<span><%= link "Back", to: Routes.user_path(@conn, :index) %></span>
+        <li>
+          <strong>Website:</strong>
+          <%= @user.website %>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <%#= render "aside.html", assigns %>
+</div>

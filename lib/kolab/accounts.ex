@@ -17,7 +17,7 @@ defmodule Kolab.Accounts do
   end
 
   def get_by_username(username) do
-    Repo.get_by(User, username: username)
+    Repo.get_by!(User, username: username)
   end
 
   @doc """
