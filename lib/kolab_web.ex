@@ -23,7 +23,7 @@ defmodule KolabWeb do
 
       import Plug.Conn
       import KolabWeb.Gettext
-      alias KolabWeb.Router.Helpers, as: Routes
+      import KolabWeb.Router.Helpers
     end
   end
 
@@ -41,7 +41,7 @@ defmodule KolabWeb do
 
       import KolabWeb.ErrorHelpers
       import KolabWeb.Gettext
-      alias KolabWeb.Router.Helpers, as: Routes
+      import KolabWeb.Router.Helpers
     end
   end
 
