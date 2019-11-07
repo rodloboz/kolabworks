@@ -8,6 +8,7 @@ module.exports = {
       whitesmoke: '#f5f7fA',
       navypurple: '#8b60ff',
       lavender: '#d8d0e5',
+      grape: 'A499BE',
 
       gray: {
         100: '#fafafa',

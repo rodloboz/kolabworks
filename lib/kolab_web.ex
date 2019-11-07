@@ -42,6 +42,8 @@ defmodule KolabWeb do
       import KolabWeb.ErrorHelpers
       import KolabWeb.Gettext
       import KolabWeb.Router.Helpers
+      import KolabWeb.Helpers.Auth, only: [signed_in?: 1]
+      import KolabWeb.Helpers.Images, only: [avatar_url: 2]
     end
   end
 

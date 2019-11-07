@@ -13,11 +13,28 @@ defmodule KolabWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth_layout do
+    plug :put_layout, {KolabWeb.LayoutView, :auth}
+  end
+
+  pipeline :with_session do
+    plug KolabWeb.Helpers.CurrentUser
+  end
+
   scope "/", KolabWeb do
-    pipe_through :browser
+    pipe_through [:browser, :with_session]
 
     get "/", IdeaController, :index
     resources "/ideas", IdeaController
+
+    # Authentication
+    get "/accounts/emailsignup/", RegistrationController, :new
+    post "/accounts/emailsignup/", RegistrationController, :create
+    get "/accounts/login/", SessionController, :new
+    post "/accounts/login/", SessionController, :create
+    delete "/accounts/logout/", SessionController, :delete
+
+    get "/:username", UserController, :show
   end
 
   # Other scopes may use custom stacks.
