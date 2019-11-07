@@ -1,0 +1,53 @@
+<div class="authentication-container">
+  <div class="card text-center mb-2 py-2">
+    <div class="text-black mb-2">
+      <span class="brand-text brand-text-lg">Kolab.Works</span>
+    </div>
+    <div class="px-10 text-gray-600 font-bold">
+      <h2>Sign up to find ideas to collaborate</h2>
+    </div>
+    <div class="mb-2 p-10">
+      <%= form_for @changeset, registration_path(@conn, :create), fn f -> %>
+        <%= if @changeset.action do %>
+          <div class="alert alert-danger">
+            <p>Oops, something went wrong! Please check the errors below.</p>
+          </div>
+        <% end %>
+
+        <div class="form-inputs">
+
+          <div class="form-group">
+            <%= email_input f, :email, placeholder: "Email", required: true %>
+            <%= error_tag f, :email %>
+          </div>
+
+          <div class="form-group">
+            <%= text_input f, :full_name, placeholder: "Full Name" %>
+            <%= error_tag f, :full_name %>
+          </div>
+
+          <div class="form-group">
+            <%= text_input f, :username, placeholder: "Username" %>
+            <%= error_tag f, :username %>
+          </div>
+
+          <div class="form-group">
+            <%= password_input f, :encrypted_password, placeholder: "Password" %>
+            <%= error_tag f, :encrypted_password %>
+          </div>
+
+          <div class="form-actions">
+            <%= submit "Sign up", class: "btn btn-purple" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="bg-white text-center border mb-2 py-2">
+    <p class="text-gray-600 text-sm m-3">
+      Have an account?
+      <%= link "Log in", to: session_path(@conn, :new), class: 'text-navypurple font-bold' %>
+    </p>
+  </div>
+</div>

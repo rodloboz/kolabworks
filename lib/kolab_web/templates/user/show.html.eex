@@ -1,0 +1,29 @@
+<div class="main-container">
+  <section>
+    <h1><%=  @user.full_name %></h2>
+    <h2><%= @user.tagline %></h4>
+    <div class="card">
+      <ul>
+        <li>
+          <strong>Email:</strong>
+          <%= @user.email %>
+        </li>
+        <li>
+          <strong>Twitter:</strong>
+          <%= @user.twitter %>
+        </li>
+
+        <li>
+          <strong>Github:</strong>
+          <%= @user.github %>
+        </li>
+
+        <li>
+          <strong>Website:</strong>
+          <%= @user.website %>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <%#= render "aside.html", assigns %>
+</div>
