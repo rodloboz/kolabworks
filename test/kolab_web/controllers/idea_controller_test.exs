@@ -3,8 +3,18 @@ defmodule KolabWeb.IdeaControllerTest do
 
   alias Kolab.Projects
 
-  @create_attrs %{logo: "some logo", name: "some name", summary: "some summary", tagline: "some tagline"}
-  @update_attrs %{logo: "some updated logo", name: "some updated name", summary: "some updated summary", tagline: "some updated tagline"}
+  @create_attrs %{
+    logo: "some logo",
+    name: "some name",
+    summary: "some summary",
+    tagline: "some tagline"
+  }
+  @update_attrs %{
+    logo: "some updated logo",
+    name: "some updated name",
+    summary: "some updated summary",
+    tagline: "some updated tagline"
+  }
   @invalid_attrs %{logo: nil, name: nil, summary: nil, tagline: nil}
 
   def fixture(:idea) do
@@ -75,6 +85,7 @@ defmodule KolabWeb.IdeaControllerTest do
     test "deletes chosen idea", %{conn: conn, idea: idea} do
       conn = delete(conn, Routes.idea_path(conn, :delete, idea))
       assert redirected_to(conn) == Routes.idea_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.idea_path(conn, :show, idea))
       end

@@ -7,11 +7,11 @@
 .brand-text {
   text-transform: uppercase;
 
-  @apply font-display font-bold tracking-wide;
+  @apply font-display font-bold tracking-wide border-navypurple border-b-2;
 }
 
 .brand-text-lg {
-  @apply text-3xl;
+  @apply text-2xl;
 }
 
 .brand-text-xl {

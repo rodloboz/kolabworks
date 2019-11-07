@@ -6,8 +6,18 @@ defmodule Kolab.ProjectsTest do
   describe "ideas" do
     alias Kolab.Projects.Idea
 
-    @valid_attrs %{logo: "some logo", name: "some name", summary: "some summary", tagline: "some tagline"}
-    @update_attrs %{logo: "some updated logo", name: "some updated name", summary: "some updated summary", tagline: "some updated tagline"}
+    @valid_attrs %{
+      logo: "some logo",
+      name: "some name",
+      summary: "some summary",
+      tagline: "some tagline"
+    }
+    @update_attrs %{
+      logo: "some updated logo",
+      name: "some updated name",
+      summary: "some updated summary",
+      tagline: "some updated tagline"
+    }
     @invalid_attrs %{logo: nil, name: nil, summary: nil, tagline: nil}
 
     def idea_fixture(attrs \\ %{}) do

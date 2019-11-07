@@ -1,32 +1,9 @@
-<h1>Listing Ideas</h1>
+<div class="main-container">
+  <section>
+    <h2>Today</h2>
+    <div class="card">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Tagline</th>
-      <th>Summary</th>
-      <th>Logo</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for idea <- @ideas do %>
-    <tr>
-      <td><%= idea.name %></td>
-      <td><%= idea.tagline %></td>
-      <td><%= idea.summary %></td>
-      <td><%= idea.logo %></td>
-
-      <td>
-        <span><%= link "Show", to: idea_path(@conn, :show, idea) %></span>
-        <span><%= link "Edit", to: idea_path(@conn, :edit, idea) %></span>
-        <span><%= link "Delete", to: idea_path(@conn, :delete, idea), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "New Idea", to: idea_path(@conn, :new) %></span>
+    </div>
+  </section>
+  <%= render "aside.html", assigns %>
+</div>
