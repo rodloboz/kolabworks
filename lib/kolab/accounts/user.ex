@@ -33,7 +33,6 @@ defmodule Kolab.Accounts.User do
     |> validate_required([:username, :email, :encrypted_password, :full_name])
     |> unique_constraint(:username)
     |> unique_constraint(:email)
-    |> put_hashed_password
     |> update_change(:encrypted_password, &Bcrypt.hash_pwd_salt/1)
     |> validate_format(:username, ~r/\A(?=.*[a-z])[a-z\d]+\Z/i)
   end
