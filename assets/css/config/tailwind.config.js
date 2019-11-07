@@ -5,8 +5,8 @@ module.exports = {
 
       black: '#212020',
       white: '#fff',
-      whiteSmoke: '#f5f7fA',
-      navyPurple: '#8b60ff',
+      whitesmoke: '#f5f7fA',
+      navypurple: '#8b60ff',
       lavender: '#d8d0e5',
 
       gray: {

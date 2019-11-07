@@ -1,8 +1,10 @@
 .btn {
+  text-transform: uppercase;
+  
   @apply font-medium py-1 px-2 rounded text-sm;
 }
 .btn-purple{
-  @apply bg-navy-purple text-white;
+  @apply bg-navypurple text-white;
 }
 .btn-white {
   @apply bg-white text-black

@@ -1,20 +1,23 @@
-# Kolab
+# Kolab.Works
 
-To start your Phoenix server:
+## Development Setup
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+1. `mix deps.get`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+2. `mix ecto.setup`
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+3. `cd assets && yarn install`
 
-## Learn more
+4. `mix phx.server` Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+## Development Workflow
+
+1. `git checkout master`
+
+2. `git checkout -b rf-new-feature` (prefix branch name with initials)
+
+3. Make the changes
+
+4. `git push origin rf-new-feature` to squash any commits
+
+5. Open a PR to merge with `master`, `development` or `release`

@@ -7,15 +7,15 @@
   @apply mx-auto px-2 py-3;
 
 }
+.navbar-link {
+  @apply font-display font-bold tracking-wide;
 
+  &:hover {
+    @apply border-b border-navypurple;
+  }
+}
 .logo-icon {
   font-size: 1.62rem;
 
   @apply my-auto;
-}
-
-@media (min-width: 1200px) {
-  .navbar-items {
-    max-width: 975px;
-  }
 }

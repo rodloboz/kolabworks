@@ -29,9 +29,34 @@ module.exports = (env, options) => ({
         }
       },
       {
-        test: /\.(s?css)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-      }
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [
+                require('tailwindcss')('css/config/tailwind.config.js'),
+                require('autoprefixer')
+              ],
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      },
     ]
   },
   plugins: [
