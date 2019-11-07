@@ -6,9 +6,36 @@ defmodule Kolab.AccountsTest do
   describe "users" do
     alias Kolab.Accounts.User
 
-    @valid_attrs %{email: "some email", encrypted_password: "some encrypted_password", full_name: "some full_name", github: "some github", tagline: "some tagline", twitter: "some twitter", username: "some username", website: "some website"}
-    @update_attrs %{email: "some updated email", encrypted_password: "some updated encrypted_password", full_name: "some updated full_name", github: "some updated github", tagline: "some updated tagline", twitter: "some updated twitter", username: "some updated username", website: "some updated website"}
-    @invalid_attrs %{email: nil, encrypted_password: nil, full_name: nil, github: nil, tagline: nil, twitter: nil, username: nil, website: nil}
+    @valid_attrs %{
+      email: "some email",
+      encrypted_password: "some encrypted_password",
+      full_name: "some full_name",
+      github: "some github",
+      tagline: "some tagline",
+      twitter: "some twitter",
+      username: "some username",
+      website: "some website"
+    }
+    @update_attrs %{
+      email: "some updated email",
+      encrypted_password: "some updated encrypted_password",
+      full_name: "some updated full_name",
+      github: "some updated github",
+      tagline: "some updated tagline",
+      twitter: "some updated twitter",
+      username: "some updated username",
+      website: "some updated website"
+    }
+    @invalid_attrs %{
+      email: nil,
+      encrypted_password: nil,
+      full_name: nil,
+      github: nil,
+      tagline: nil,
+      twitter: nil,
+      username: nil,
+      website: nil
+    }
 
     def user_fixture(attrs \\ %{}) do
       {:ok, user} =

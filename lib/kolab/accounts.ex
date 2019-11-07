@@ -10,8 +10,9 @@ defmodule Kolab.Accounts do
 
   def get_by_email_or_username(string) do
     from(u in User, where: u.username == ^string or u.email == ^string)
-    |> Repo.one
+    |> Repo.one()
   end
+
   def get_by_username(username) when is_nil(username) do
     nil
   end

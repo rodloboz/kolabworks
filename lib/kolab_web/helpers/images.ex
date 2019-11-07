@@ -5,10 +5,12 @@ defmodule KolabWeb.Helpers.Images do
     cond do
       avatar = user.avatar ->
         avatar
+
       gravatar?(user) ->
         user.email
         |> hash_email
         |> gravatar_url
+
       true ->
         Routes.static_path(conn, "/images/default_avatar.png")
     end
@@ -18,7 +20,7 @@ defmodule KolabWeb.Helpers.Images do
     user.email
     |> hash_email
     |> gravatar_check
-    |> HTTPoison.get!
+    |> HTTPoison.get!()
     |> Map.get(:status_code) != 404
   end
 

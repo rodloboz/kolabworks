@@ -3,9 +3,36 @@ defmodule KolabWeb.UserControllerTest do
 
   alias Kolab.Accounts
 
-  @create_attrs %{email: "some email", encrypted_password: "some encrypted_password", full_name: "some full_name", github: "some github", tagline: "some tagline", twitter: "some twitter", username: "some username", website: "some website"}
-  @update_attrs %{email: "some updated email", encrypted_password: "some updated encrypted_password", full_name: "some updated full_name", github: "some updated github", tagline: "some updated tagline", twitter: "some updated twitter", username: "some updated username", website: "some updated website"}
-  @invalid_attrs %{email: nil, encrypted_password: nil, full_name: nil, github: nil, tagline: nil, twitter: nil, username: nil, website: nil}
+  @create_attrs %{
+    email: "some email",
+    encrypted_password: "some encrypted_password",
+    full_name: "some full_name",
+    github: "some github",
+    tagline: "some tagline",
+    twitter: "some twitter",
+    username: "some username",
+    website: "some website"
+  }
+  @update_attrs %{
+    email: "some updated email",
+    encrypted_password: "some updated encrypted_password",
+    full_name: "some updated full_name",
+    github: "some updated github",
+    tagline: "some updated tagline",
+    twitter: "some updated twitter",
+    username: "some updated username",
+    website: "some updated website"
+  }
+  @invalid_attrs %{
+    email: nil,
+    encrypted_password: nil,
+    full_name: nil,
+    github: nil,
+    tagline: nil,
+    twitter: nil,
+    username: nil,
+    website: nil
+  }
 
   def fixture(:user) do
     {:ok, user} = Accounts.create_user(@create_attrs)
@@ -75,6 +102,7 @@ defmodule KolabWeb.UserControllerTest do
     test "deletes chosen user", %{conn: conn, user: user} do
       conn = delete(conn, Routes.user_path(conn, :delete, user))
       assert redirected_to(conn) == Routes.user_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.user_path(conn, :show, user))
       end
